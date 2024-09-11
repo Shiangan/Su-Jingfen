@@ -249,10 +249,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <!-- 致贈花籃部分 -->
         <!-- 致贈花籃部分 -->
+<!-- 致贈花籃部分 -->
 <section id="donate-flower">
     <h3><strong>致贈花籃，送上祝福</strong></h3>
     <p>選擇您想致贈的花籃樣式，通過 LINE 直接與我們聯繫。</p>
-    
+
     <!-- 訂購按鈕 -->
     <a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank" class="btn-order">加入我們的 LINE 訂購</a>
 
@@ -260,20 +261,14 @@ document.addEventListener('DOMContentLoaded', function () {
     <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>顯示花籃樣式 🌹</strong></a>
 </section>
 
-        <!-- 花籃畫廊，默認隱藏 -->
+<!-- 花籃畫廊，默認隱藏 -->
 <div id="flower-basket-gallery" style="display: none;">
-    <!-- 花籃样式内容 -->
-</div>
-
-                <!-- 花篮画廊，默认隐藏 -->
-    <div id="flower-basket-gallery" style="display: none;">
-        <div class="flower-basket-item">
-            <a href="image/花籃A.JPG" data-lightbox="flower-baskets" data-title="A款NT$2,500/1對">
-                <img src="image/花籃A.JPG" alt="花籃A">
-            </a>
-            <p class="price"><strong>A款NT$2,500/對</strong></p>
-        </div>
-        <div class="flower-basket-item">
+    <div class="flower-basket-item">
+        <a href="image/花籃A.JPG" data-lightbox="flower-baskets" data-title="A款NT$2,500/1對">
+            <img src="image/花籃A.JPG" alt="花籃A">
+        </a>
+        <p class="price"><strong>A款NT$2,500/對</strong></p>
+    </div>
             <a href="image/花籃B.JPG" data-lightbox="flower-baskets" data-title="B款NT$3,000/1對">
                 <img src="image/花籃B.JPG" alt="花籃B">
             </a>
@@ -317,8 +312,20 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <!-- 依此类推 -->
     </div>
-    <p><br><strong>訂購花籃請點選</strong><a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>這裡</strong></a>。</p>
-</section>
+
+<script>
+    // 控制显示和隐藏花籃画廊的功能
+    document.getElementById('show-flower-baskets').addEventListener('click', function() {
+        var gallery = document.getElementById('flower-basket-gallery');
+        if (gallery.style.display === 'none' || gallery.style.display === '') {
+            gallery.style.display = 'flex';
+            this.innerHTML = '<strong>隱藏花籃樣式 🌹</strong>';
+        } else {
+            gallery.style.display = 'none';
+                    this.innerHTML = '<strong>顯示花籃樣式 🌹</strong>';
+        }
+    });
+</script>
 
 <style>
     /* 致贈花籃部分样式 */
@@ -343,22 +350,6 @@ document.addEventListener('DOMContentLoaded', function () {
         font-size: 18px;
         color: #555;
         margin-bottom: 20px;
-    }
-
-    /* 訂購按钮样式 */
-    .btn-order {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 18px;
-        color: #fff;
-        background-color: #28a745; /* 绿色背景 */
-        text-decoration: none;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    .btn-order:hover {
-        background-color: #218838; /* 鼠标悬停时的颜色变化 */
     }
 
     /* 顯示花籃樣式按钮样式 */
@@ -403,21 +394,6 @@ document.addEventListener('DOMContentLoaded', function () {
         color: #333;
     }
 </style>
-
-    <script>
-    // 控制显示和隐藏花籃画廊的功能
-    document.getElementById('show-flower-baskets').addEventListener('click', function() {
-        var gallery = document.getElementById('flower-basket-gallery');
-        if (gallery.style.display === 'none' || gallery.style.display === '') {
-            gallery.style.display = 'flex';
-            this.innerHTML = '<strong>隱藏花籃樣式 🌹</strong>';
-        } else {
-            gallery.style.display = 'none';
-            this.innerHTML = '<strong>顯示花籃樣式 🌹</strong>';
-        }
-    });
-</script>
-
         
         <!-- 固定聯絡方式 -->
         <div id="fixed-links">
