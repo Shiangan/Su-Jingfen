@@ -248,13 +248,22 @@ document.addEventListener('DOMContentLoaded', function () {
          </style>
 
         <!-- 致贈花籃部分 -->
-        <section id="donate-flower">
-            <h3><strong>致贈花籃，送上祝福</strong></h2>
-            <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃樣式🌹</p></strong></a>
-                <p>選擇您想致贈的花籃樣式，通過 LINE 直接與我們聯繫。</p>
+        <!-- 致贈花籃部分 -->
+<section id="donate-flower">
+    <h3><strong>致贈花籃，送上祝福</strong></h3>
+    <p>選擇您想致贈的花籃樣式，通過 LINE 直接與我們聯繫。</p>
     
     <!-- 訂購按鈕 -->
-    <a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank" class="btn-order">加入 LINE 訂購</a>
+    <a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank" class="btn-order">加入我們的 LINE 訂購</a>
+
+    <!-- 顯示花籃樣式按鈕 -->
+    <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>顯示花籃樣式 🌹</strong></a>
+</section>
+
+        <!-- 花籃畫廊，默認隱藏 -->
+<div id="flower-basket-gallery" style="display: none;">
+    <!-- 花籃样式内容 -->
+</div>
 
                 <!-- 花篮画廊，默认隐藏 -->
     <div id="flower-basket-gallery" style="display: none;">
@@ -311,75 +320,104 @@ document.addEventListener('DOMContentLoaded', function () {
     <p><br><strong>訂購花籃請點選</strong><a href="https://line.me/ti/p/lAYTmfcqvp" target="_blank"><strong>這裡</strong></a>。</p>
 </section>
 
-        <style>
-            /* 致贈花籃部分样式 */
-#donate-flower {
-    text-align: center; /* 内容居中对齐 */
-    margin: 20px auto; /* 上下边距和水平居中 */
-    max-width: 800px; /* 最大宽度 */
-    padding: 20px; /* 内边距 */
-}
+<style>
+    /* 致贈花籃部分样式 */
+    #donate-flower {
+        text-align: center;
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 20px;
+        border: 2px solid #0066cc; /* 深蓝色边框 */
+        border-radius: 10px; /* 圆角 */
+        background-color: #f0f8ff; /* 淡蓝色背景 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+    }
 
-#donate-flower h3 {
-    font-size: 28px; /* 标题字体大小 */
-    margin-bottom: 20px; /* 标题底部边距 */
-    color: #333; /* 标题颜色 */
-}
+    #donate-flower h3 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 15px;
+    }
 
-#donate-flower p {
-    font-size: 24px; /* 内容字体大小 */
-    margin: 10px 0; /* 内容上下边距 */
-    color: #555; /* 内容颜色 */
-}
+    #donate-flower p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 20px;
+    }
 
-#donate-flower a.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 24px; /* 按钮字体大小 */
-    color: #fff; /* 按钮文字颜色 */
-    background-color: #0066cc; /* 按钮背景颜色 */
-    text-decoration: none; /* 去掉下划线 */
-    border-radius: 5px; /* 按钮圆角 */
-}
+    /* 訂購按钮样式 */
+    .btn-order {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #28a745; /* 绿色背景 */
+        text-decoration: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
 
-#donate-flower a.btn:hover {
-    background-color: #004d99; /* 鼠标悬停时背景颜色 */
-}
-            
-#flower-basket-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
+    .btn-order:hover {
+        background-color: #218838; /* 鼠标悬停时的颜色变化 */
+    }
 
-.flower-basket-item {
-    max-width: 200px; /* 控制花籃圖片最大寬度 */
-    text-align: center;
-}
+    /* 顯示花籃樣式按钮样式 */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #0066cc; /* 蓝色背景 */
+        text-decoration: none;
+        border-radius: 5px;
+    }
 
-.flower-basket-item img {
-    width: 100%;
-    height: auto; /* 保持圖片比例 */
-}
+    .btn:hover {
+        background-color: #004d99; /* 鼠标悬停时的颜色变化 */
+    }
 
-.price {
-    margin-top: 10px;
-    font-size: 18px;
-}
-            
+    /* 花籃画廊样式 */
+    #flower-basket-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .flower-basket-item {
+        max-width: 200px; /* 控制花籃圖片最大寬度 */
+        text-align: center;
+    }
+
+    .flower-basket-item img {
+        width: 100%;
+        height: auto; /* 保持圖片比例 */
+        border: 2px solid #ccc; /* 圖片边框 */
+        border-radius: 5px; /* 圖片圓角 */
+    }
+
+    .price {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #333;
+    }
 </style>
 
     <script>
+    // 控制显示和隐藏花籃画廊的功能
     document.getElementById('show-flower-baskets').addEventListener('click', function() {
-        const gallery = document.getElementById('flower-basket-gallery');
+        var gallery = document.getElementById('flower-basket-gallery');
         if (gallery.style.display === 'none' || gallery.style.display === '') {
             gallery.style.display = 'flex';
+            this.innerHTML = '<strong>隱藏花籃樣式 🌹</strong>';
         } else {
             gallery.style.display = 'none';
+            this.innerHTML = '<strong>顯示花籃樣式 🌹</strong>';
         }
     });
 </script>
+
         
         <!-- 固定聯絡方式 -->
         <div id="fixed-links">
